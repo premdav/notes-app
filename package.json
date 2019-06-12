@@ -1,0 +1,24 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Note taking app built to learn the basics of Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/premdav/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/premdav/notes-app/issues"
+  },
+  "homepage": "https://github.com/premdav/notes-app#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "validator": "^11.0.0"
+  }
+}
