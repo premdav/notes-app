@@ -1,3 +1,4 @@
 const getNotes = require('./notes.js');
 
-console.log(getNotes());
+const notes = getNotes();
+console.log(notes);
