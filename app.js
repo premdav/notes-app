@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const yargs = require('yargs');
-const getNotes = require('./notes.js');
+const notes = require('./notes.js');
 
 // users should be able to add, remove, list, read notes
 yargs.command({
@@ -19,16 +19,22 @@ yargs.command({
         }
     },
     handler: (argv) => {
-        console.log('Adding a new note with title:', argv.title);
-        console.log('Note contents:', argv.body);
+        notes.addNote(argv.title, argv.body);
     }
 });
 
 yargs.command({
     command: 'remove',
     describe: 'Removes a note',
-    handler: () => {
-        console.log('Removing note');
+    builder: {
+        title: {
+            describe: 'Note Title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
+        notes.removeNote(argv.title);
     }
 });
 
@@ -36,7 +42,7 @@ yargs.command({
     command: 'list',
     describe: 'Lists all notes',
     handler: () => {
-        console.log('Listing all notes');
+        notes.listNotes();
     }
 });
 
